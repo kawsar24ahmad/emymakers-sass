@@ -1,0 +1,58 @@
+@use '../../utils' as *;
+
+
+$total-brand: 6;
+$logo-width :12rem;
+$total-logo-width: calc($total-brand  * $logo-width * 2);
+$animation-duration: calc($total-brand * 2s  );
+
+@keyframes slideleft {
+100%{
+    transform: translateX( calc(-100%/2));
+}
+}
+@keyframes slideright {
+from{
+    transform: translateX(0%);
+}
+to{
+    transform: translateX(100%);
+}
+}
+
+.brand-area{
+    .container-fluid{
+            display: grid;
+            place-items: center;
+        .slider1{
+            height: 12rem;
+            box-shadow: 0 .8rem 1.4rem  -.2rem #0001;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            max-width: 95%;
+            ul.brands{
+                list-style: none;
+                width: $total-logo-width;
+                display: flex;
+                align-items: center;
+                animation: slideleft  $animation-duration  infinite linear;
+                .brand-logo{
+                        width: $logo-width;
+                        margin: 30px;
+                        & img{
+                            width: 100%;
+                            height: 130px;
+                        }
+                }
+            }
+            &:hover ul.brands{
+                animation-play-state: paused;
+            }
+        }
+}
+}
+
+
+
+

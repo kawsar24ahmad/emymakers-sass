@@ -1,0 +1,33 @@
+@use '../../utils' as *;
+
+.namaz-header-area{
+    background-color: var(--theme-sec-color);
+
+    
+    padding: 10px;
+    & ul{
+        display: flex;
+
+        & li{
+            list-style: none;
+            margin-left: 10px;
+        }
+    }
+}
+.namaz-time{
+    & div.container.text-center{
+        & > a{
+            color: var(--theme-color);
+        }
+    }
+}
+.month-wrapper{
+    & a{
+        background-color: blue;
+        margin: 5px;
+        padding: 5px;
+        &:link{
+            background-color: var(--theme-color);
+        }
+    }
+}

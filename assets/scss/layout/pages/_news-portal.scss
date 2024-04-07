@@ -1,0 +1,40 @@
+@use '../../utils' as *;
+
+
+.news-portal-title{
+   & .text-content{
+    border-bottom: 1px solid var(--theme-color);
+        margin-bottom: 10px;
+
+        &  span{
+            background-color: var(--theme-color);
+            color: #fff;
+            display: inline-block;
+            border-radius: 25px 0 25px 0;
+            padding: 5px 20px;
+            font-size: 1.2rem;
+            
+       }
+   }
+   
+}
+.news-portal-links-area{
+    & .card{
+        flex-direction: row;
+        .card-header{
+            padding: 4px;
+         
+        }
+        .card-body{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            & h5{
+                font-size: 1rem;
+                font-weight: 400;
+              
+            }
+        }
+        
+    }
+}

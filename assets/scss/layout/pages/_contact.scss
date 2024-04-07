@@ -1,0 +1,11 @@
+@use '../../utils' as *;
+
+.map-address{
+    & p{
+        margin-bottom: 0;
+        margin-left: 10px;
+        & svg{
+            margin-right: 5px;
+        }
+    }
+}

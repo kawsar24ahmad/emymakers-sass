@@ -1,0 +1,32 @@
+@use '../utils' as *;
+
+.toTopBtn{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--theme-color);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    & svg{
+        font-size: 1.5rem;
+        line-height: 1rem;
+    }
+    &:hover{
+        background-color: #222;
+        color: var(--theme-color);
+        border: 2px solid var(--theme-color);
+    }
+}
+.toTopBtn.active{
+    bottom: 30px;
+    visibility: visible;
+    opacity: 1;
+    color: #fff;
+}

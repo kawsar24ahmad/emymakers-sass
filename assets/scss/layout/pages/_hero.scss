@@ -1,0 +1,9 @@
+@use '../../utils' as *;
+
+.hero-img {
+    & img{
+        width: 100%;
+        object-fit: contain;
+        
+    }
+}

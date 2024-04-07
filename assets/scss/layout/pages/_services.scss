@@ -1,0 +1,104 @@
+@use '../../utils' as *;
+
+.box{
+    // position: relative;
+    // overflow: hidden;
+    .img-btn{
+        display: inline-block;
+        position: relative;
+        
+        &::before{
+          content: '';
+          height: 0;
+          width: 1px;
+          position: absolute;
+          background: #ccc;
+          left: 0;
+          bottom: 0;
+          transition: all 0.5s ease-in-out;
+        }
+        &::after{
+            content: '';
+            height: 0;
+            width: 1px;
+            position: absolute;
+            background: #ccc;
+            right: 0;
+            top: 0;
+            transition: all 0.5s ease-in-out;
+        }
+        &:hover{
+            &::before{
+                height: 100%;
+              
+            }
+            &::after{
+                height: 100%;
+            }
+        }
+        
+        & span{
+            display: block;
+            position: relative;
+            &::before{
+                content: '';
+                height: 1px;
+                width: 0;
+                position: absolute;
+                background:#ccc;
+                right: 0;
+                bottom: 0;
+                transition: all 0.5s ease-in-out;
+            }
+            &::after{
+                content: '';
+                height: 1px;
+                width: 0;
+                position: absolute;
+                background: #ccc;
+                left: 0;
+                top: 0;
+                transition: all 0.5s ease-in-out;
+            }
+            &:hover{
+                &::before{
+                    width: 100%;
+                  
+                }
+                &::after{
+                    width: 100%;
+                }
+            }
+            & .box-img{
+                & img{
+                    width: 100%;
+                    object-fit: cover;
+                    padding: 1.3rem;
+                }
+            }
+        }
+    }
+
+    
+    &-title{
+        border-bottom: #ccc 1px solid;
+        padding: .5rem 0;
+        & span{
+            font-size: 1rem;
+            text-align: center;
+            line-height: 1.5rem;
+            display: block;
+        
+        }
+        
+    }
+    &:hover{
+     
+        & .box-title{
+            
+            color: var(--theme-color);
+        }
+    }
+    
+
+}

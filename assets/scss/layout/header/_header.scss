@@ -1,0 +1,166 @@
+@use '../../utils' as *;
+
+.header-area{
+    background: var(--theme-sec-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    @include lg{
+        padding: 20px 10px;
+    }
+    @include md{
+        padding: 15px 5px;
+    }
+    
+
+    .logo{
+        & img{
+            width: 80%;
+            object-fit: cover;
+        }
+    }
+    #check{
+        display: none;
+    }
+    label.icons{
+        @extend %font-icon;
+        line-height: 25px;
+        font-size: 20px;
+        position: fixed;
+        top: 25px;
+        right: 35px;
+        z-index: 9999999999;
+        display: none;
+        color: #000;
+            @include lg{
+            display: block;
+            &::before{
+                background: #fff;
+                height: 52px;
+                width: 48px;
+                border-radius: 5px;
+                position: absolute;
+                right: -17px;
+                top: -14px;
+                content: "";
+                z-index: -1;
+                border: 3px solid var(--theme-color);
+            }
+        }    
+    }
+    #check:checked ~ nav {
+        display: flex;
+        position: fixed;
+        top: 0;
+        width: 50%;
+        left: 0;
+        height: 100vh;
+        z-index: 999;
+        background: var(--theme-color);
+        color: #fff;
+
+        & .navigation__list{     
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            width: 100%;
+
+        }
+        & .navigation__link{
+            display: inline-block;
+        }
+    }
+    
+    #check:not(:checked) ~ .icons #cross-icon{
+        display: none;
+    }
+    #check:checked ~ .icons #check-icon{
+        display: none;
+    }
+    
+    .navigation{
+        display: flex;
+        @include lg{
+            display: none;
+        }
+     
+        &__list{
+            display: flex;
+            justify-content: space-around;
+        }
+        &__item{
+            font-size: 1rem;
+            list-style: none;
+            position:relative;
+            transition: all .5s ease;
+            @include lg{
+                width: 100%;
+                text-align: center;
+                
+                font-size: 1rem;
+            }
+            
+            .nasted__list{
+                flex-direction: column;
+                position: absolute;
+                z-index: 999;
+                top: 130%;
+                left: 0;
+                width: 200px;
+                background-color: inherit;
+                color: initial;
+                transition: all .3s ease;
+                opacity: 0;
+                visibility: hidden;
+
+                @include lg{
+                    left: 70%;
+                }
+
+                .nasted__item{
+                    padding:5px 5px;
+                    transition: all .3s ease;
+                    list-style: none;
+                    &:hover{
+                        background-color: var(--theme-color);
+                        color: #fff;
+                        padding-left: 26px ;
+                    }
+                    .nasted__link{
+                        text-decoration: none;
+                    }
+                }
+            }
+            &:hover{
+                background: #fff;
+                color:var(--theme-color);
+                .nasted__list{
+                    top: 100%;
+                    opacity: 1;
+                    visibility: visible;
+                    @include lg{
+                        top: 0;
+                    }
+                }
+            }
+        }
+        &__link{
+            text-decoration: none;
+            display: inline-block;
+            padding: 20px 10px;
+            @include lg{
+                display: block;
+                padding: 20px 5px;
+            }
+        }
+              
+    }
+    
+}
+ul.navigation__list>li:has(ul.nasted__list)::after{
+    content: "\25BC";
+    margin-right: 5px ;
+    font-size: 0.7em;
+}

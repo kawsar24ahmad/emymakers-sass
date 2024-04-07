@@ -1,0 +1,10 @@
+@use '../utils' as *;
+
+.btn{
+    background-color: var(--theme-color);
+    color: #fff;
+    &:hover{
+        background-color: var(--theme-sec-color);
+        color: var(--theme-color);
+    }
+}

@@ -1,0 +1,17 @@
+@use '../../utils' as *;
+
+.footer-area-bottom{
+    background-color: var(--theme-sec-color);
+    & li {
+        list-style: none;
+        & svg{
+            margin-right: 10px;
+        }
+    }
+    & .copy-right{
+        @include sm{
+            margin-top: 15px;
+            text-align: center;
+        }
+    }
+}

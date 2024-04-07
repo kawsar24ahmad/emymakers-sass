@@ -1,0 +1,19 @@
+@use '../../utils' as *;
+
+.clients-area{
+     .card{
+       
+        &-img{
+            & > img{
+                width: 100%;
+                object-fit: contain;
+                height: 100%;
+            }
+        }
+        &-title{
+            & h5{
+                font-weight: 500;
+            }
+        }
+    }   
+}
